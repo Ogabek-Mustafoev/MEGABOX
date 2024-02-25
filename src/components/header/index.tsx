@@ -3,7 +3,7 @@
 import { HeaderTop } from '@/components/header/header-top';
 import { TopCategories } from '@/components/top-categories';
 import { useLocaleLink } from '@/hooks/locale-link';
-import { enter_icon, search_icon } from '@/mock';
+import { category_icon, enter_icon, search_icon } from '@/mock';
 import { headerData } from '@/mock/header.data';
 import { topCategories } from '@/mock/top-categories.data';
 import { TLocale } from '@/types';
@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import { Button, Image, Input } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
-import { MobileNav } from '../';
+import { LocaleSwitcher, MobileNav } from '../';
 
 interface IHeader {
   lang: TLocale;
@@ -45,12 +45,32 @@ export const Header = ({ lang }: IHeader) => {
     <header>
       <HeaderTop data={headerData.headerTop} />
       <nav className={isFixed ? 'fixed shadow-lg top-0 left-0 w-full z-[1001] bg-white' : ''}>
-        <div className={`container flex justify-between gap-5 py-3 items-center`}>
-          <LocaleLink href="/">
-            <span className="font-bold text-3xl">MEGABOX</span>
-          </LocaleLink>
+        <div
+          className={`container flex flex-col lg:flex-row justify-between gap-0 lg:gap-5 py-3 lg:items-center`}
+        >
+          <div className="flex justify-between items-center">
+            <LocaleLink
+              href="/"
+              className="font-bold text-transparent lg:text-black text-2xl lg:text-3xl bg-gradient-to-r from-primary to-pink bg-clip-text"
+            >
+              MEGABOX
+            </LocaleLink>
+            <LocaleSwitcher className="block lg:hidden" />
+          </div>
 
-          <div className="flex-1 max-w-xl mx-auto">
+          <div className="flex-1 flex gap-2 items-center w-full lg:max-w-xl mx-auto">
+            <Button
+              size="lg"
+              radius="sm"
+              isIconOnly
+              className="bg-black md:hidden"
+            >
+              <Image
+                alt="category icon"
+                className="invert"
+                src={category_icon.src}
+              />
+            </Button>
             <Input
               size="sm"
               type="text"
@@ -115,10 +135,10 @@ export const Header = ({ lang }: IHeader) => {
         </div>
       </nav>
       <MobileNav lang={lang} />
-      {/*<TopCategories*/}
-      {/*  isFixed={isFixed}*/}
-      {/*  data={topCategories}*/}
-      {/*/>*/}
+      <TopCategories
+        isFixed={isFixed}
+        data={topCategories}
+      />
     </header>
   );
 };

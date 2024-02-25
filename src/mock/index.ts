@@ -1,7 +1,9 @@
 import humo from '@/icons/HUMO.svg';
 import anor_bank from '@/icons/anor-bank.svg';
 import basket_icon from '@/icons/basket.svg';
+import bottom_arrow from '@/icons/bottom-arrow.svg';
 import call_icon from '@/icons/call.svg';
+import category_icon from '@/icons/category.svg';
 import change_icon from '@/icons/change.svg';
 import check_file from '@/icons/check-file.svg';
 import click_icon from '@/icons/click.svg';
@@ -46,6 +48,8 @@ export {
   laptop_icon,
   basket_icon,
   search_icon,
+  bottom_arrow,
+  category_icon,
   location_icon,
   refrigerator_icon,
   vacuumCleaner_icon,

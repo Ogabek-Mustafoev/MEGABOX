@@ -20,21 +20,27 @@ interface ISlider {
   component: FC<IProduct> | FC<ISlide> | FC<IPopularCategory> | FC<ISliderBrands>;
   sliderData: any[];
   title?: string;
+  dotListClass?: string;
   titleClass?: string;
   showDots?: boolean;
+  autoPlay?: boolean;
+  arrows?: boolean;
 }
 
 export const Slider: FC<ISlider> = (props) => {
   const {
     items,
-    titleClass,
     title,
-    component: Component,
+    titleClass,
     sliderData,
+    component: Component,
+    dotListClass = '',
+    arrows = true,
+    autoPlay = true,
+    showDots = false,
     parentClass = 'py-3',
-    childClass = 'px-3',
+    childClass = 'px-3 h-full',
     wrapperClass = 'flex flex-col gap-3 mt-3',
-    showDots,
   } = props;
 
   const responsive = {
@@ -59,15 +65,18 @@ export const Slider: FC<ISlider> = (props) => {
     <div className={wrapperClass}>
       {title && <p className={titleClass}>{title}</p>}
       <Carousel
-        className={parentClass}
-        responsive={responsive}
-        autoPlay={true}
-        swipeable={true}
-        showDots={showDots}
+        arrows={arrows}
         infinite={true}
+        swipeable={true}
+        autoPlay={autoPlay}
+        showDots={showDots}
+        sliderClass="h-full"
         partialVisible={true}
         itemClass={childClass}
-        dotListClass="custom-dot-list-style"
+        responsive={responsive}
+        className={parentClass}
+        dotListClass={dotListClass}
+        containerClass="w-full h-full"
       >
         {sliderData.map((item, idx) => (
           <Component

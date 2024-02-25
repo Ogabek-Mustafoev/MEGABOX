@@ -13,6 +13,7 @@ const config: Config = {
     extend: {
       colors: {
         'muted': '#6C7178',
+        'pink': '#FC16AC',
         'light-gray': '#F9FAFB',
         'dark-gray': '#8E9AAC',
         'primary': '#FE4500',

@@ -8,7 +8,10 @@ export const Banner: FC<ISlide> = (props) => {
   const { url } = props;
   return (
     <Image
-      className="w-full h-full rounded-none"
+      className="w-full h-full object-cover rounded-none"
+      classNames={{
+        wrapper: 'w-full h-full',
+      }}
       src={url}
       alt="banner-img"
     />
