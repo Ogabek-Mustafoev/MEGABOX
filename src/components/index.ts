@@ -7,7 +7,7 @@ export { Providers } from './providers';
 export { MobileNav } from './mobile-nav';
 export { MenuButton } from './menu-button';
 export { BaseLayout } from './base-layout';
+export { MiniBanner } from './mini-banner';
 export { ProductCard } from './product-card';
 export { LocaleSwitcher } from './locale-switcher';
 export { PopularCategoryCard } from './popular-category-card';
-export { MiniBanner } from './mini-banner';

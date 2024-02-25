@@ -58,7 +58,7 @@ export const Header = ({ lang }: IHeader) => {
             <LocaleSwitcher className="block lg:hidden" />
           </div>
 
-          <div className="flex-1 flex gap-2 items-center w-full lg:max-w-xl mx-auto">
+          <div className="flex-1 flex gap-3 items-center w-full lg:max-w-xl mx-auto">
             <Button
               size="lg"
               radius="sm"
@@ -80,14 +80,14 @@ export const Header = ({ lang }: IHeader) => {
               classNames={{
                 innerWrapper: 'bg-transparent overflow-hidden p-0 shadow-none border-none',
                 inputWrapper: 'bg-transparent p-0 shadow-none border',
-                input: 'bg-transparent -ml-2 border-none shadow-none',
+                input: 'bg-transparent ml-2 md:-ml-2 border-none shadow-none',
               }}
               startContent={
                 <Button
                   isIconOnly
                   size="lg"
                   radius="sm"
-                  className="bg-transparent"
+                  className="bg-transparent hidden md:flex"
                 >
                   <Image
                     src={search_icon.src}
@@ -96,13 +96,26 @@ export const Header = ({ lang }: IHeader) => {
                 </Button>
               }
               endContent={
-                <Button
-                  className="bg-light-gray text-sm font-semibold"
-                  size="lg"
-                  radius="sm"
-                >
-                  {t('searching')}
-                </Button>
+                <>
+                  <Button
+                    className="bg-light-gray hidden md:flex text-sm font-semibold"
+                    size="lg"
+                    radius="sm"
+                  >
+                    {t('searching')}
+                  </Button>
+                  <Button
+                    isIconOnly
+                    size="lg"
+                    radius="sm"
+                    className="bg-transparent md:hidden"
+                  >
+                    <Image
+                      src={search_icon.src}
+                      alt="search"
+                    />
+                  </Button>
+                </>
               }
             />
           </div>
@@ -120,7 +133,6 @@ export const Header = ({ lang }: IHeader) => {
               <li
                 key={idx}
                 className={`flex ${classes} w-10 h-10 rounded-full bg-light-gray text-sm font-semibold cursor-pointer flex-col gap-1 items-center justify-center`}
-                onClick={() => (key == 'signIn' ? console.log('Open') : console.log('Close'))}
               >
                 <LocaleLink href={url as string}>
                   <Image
@@ -134,7 +146,6 @@ export const Header = ({ lang }: IHeader) => {
           </ul>
         </div>
       </nav>
-      <MobileNav lang={lang} />
       <TopCategories
         isFixed={isFixed}
         data={topCategories}
