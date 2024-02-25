@@ -38,6 +38,7 @@ export const Header = ({ lang }: IHeader) => {
 
   useEffect(() => {
     window.addEventListener('scroll', onWindowScroll);
+    dispatch(setIsFixed(Boolean(localStorage.getItem('isFixed'))));
 
     return () => {
       window.removeEventListener('scroll', onWindowScroll);
