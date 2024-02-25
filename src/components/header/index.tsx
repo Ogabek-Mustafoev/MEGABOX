@@ -10,10 +10,11 @@ import { TLocale } from '@/types';
 
 import { useEffect, useState } from 'react';
 
-import { Button, Image, Input } from '@nextui-org/react';
+import { Button, Image, Input, useDisclosure } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
 import { LocaleSwitcher, MobileNav } from '../';
+import { AuthModal } from '../auth';
 
 interface IHeader {
   lang: TLocale;
@@ -23,7 +24,7 @@ export const Header = ({ lang }: IHeader) => {
   const [isFixed, setIsFixed] = useState<boolean>(false);
   const t = useTranslations('header');
   const { LocaleLink } = useLocaleLink();
-
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const onWindowScroll = () => {
     const scrollHeight = window.scrollY;
     if (scrollHeight > 40) {
@@ -120,14 +121,16 @@ export const Header = ({ lang }: IHeader) => {
             />
           </div>
           <ul className="hidden lg:flex gap-4 items-center">
-            <li className="flex items-center gap-3 cursor-pointer">
-              <p className="font-semibold text-sm">{t('enter')}</p>
-              <Image
-                src={enter_icon.src}
-                className="rounded-none w-5 h-5"
-                alt="enter"
-              />
-            </li>
+            <Button onPress={onOpen} className='bg-white'>
+              <li className="flex items-center gap-3 cursor-pointer">
+                <p className="font-semibold text-sm">{t('enter')}</p>
+                <Image
+                  src={enter_icon.src}
+                  className="rounded-none w-5 h-5"
+                  alt="enter"
+                />
+              </li>
+            </Button>
             <li className="w-px h-10 bg-[#E8ECEF]" />
             {headerData.headerLink.map(({ key, classes, icon, url }, idx) => (
               <li
@@ -149,6 +152,10 @@ export const Header = ({ lang }: IHeader) => {
       <TopCategories
         isFixed={isFixed}
         data={topCategories}
+      />
+      <AuthModal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
       />
     </header>
   );

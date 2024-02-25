@@ -11,3 +11,5 @@ export { MiniBanner } from './mini-banner';
 export { ProductCard } from './product-card';
 export { LocaleSwitcher } from './locale-switcher';
 export { PopularCategoryCard } from './popular-category-card';
+export {MainInput} from './main-input';
+export {PhoneInputMask} from './phone-input'
