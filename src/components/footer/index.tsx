@@ -28,8 +28,8 @@ const imgLogo = [
 export const Footer = ({ lang }: IFooter) => {
   const t = useTranslations('footer-link');
   return (
-    <footer className="lg:block bg-dark-blue w-full relative z-3 mt-14">
-      <div className="container mx-auto flex justify-between  pt-[44px] pb-6 w-full">
+    <footer className="hidden lg:block bg-dark-blue w-full relative z-3 mt-14">
+      <div className="container mx-auto pt-11 gap-2 pb-6 w-full grid grid-cols-3">
         <div className="xl:mb-0 mb-10">
           <div className="text-white xl:ml-0 ml-5">
             <p className="text-sm font-normal mb-5">{t('questions')}</p>
@@ -80,33 +80,33 @@ export const Footer = ({ lang }: IFooter) => {
               })}
             </div>
           </div>
-          <div className="grid grid-cols-3">
-            {footer_data.map((item, index) => {
-              return (
-                <div
-                  className="w-full px-10"
-                  key={index}
-                >
-                  <h1 className="text-base font-semibold text-white cursor-pointer mb-3">
-                    {t(item.title)}
-                  </h1>
-                  <div className="flex flex-col gap-1">
-                    {item.footerlist.map((data, index) => {
-                      return (
-                        <a
-                          key={index}
-                          className="text-sm text-gray-300 opacity-50 hover:opacity-100 w-max py-0.5"
-                          href={data.link}
-                        >
-                          {t(data.listName)}
-                        </a>
-                      );
-                    })}
-                  </div>
+        </div>
+        <div className="grid grid-cols-3">
+          {footer_data.map((item, index) => {
+            return (
+              <div
+                className="w-full px-10"
+                key={index}
+              >
+                <h1 className="text-base font-semibold text-white cursor-pointer mb-3">
+                  {t(item.title)}
+                </h1>
+                <div className="flex flex-col gap-1">
+                  {item.footerlist.map((data, index) => {
+                    return (
+                      <a
+                        key={index}
+                        className="text-sm text-gray-300 opacity-50 hover:opacity-100 w-max py-0.5"
+                        href={data.link}
+                      >
+                        {t(data.listName)}
+                      </a>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="bg-slate-800 w-full py-3">

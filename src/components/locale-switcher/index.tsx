@@ -4,10 +4,16 @@ import { useLocaleNavigate } from '@/hooks';
 import { languages } from '@/mock';
 import { IOption, TLocale } from '@/types';
 
+import { FC } from 'react';
+
 import { Select, SelectItem } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
 
-export const LocaleSwitcher = () => {
+interface ILocaleSwitcher {
+  className?: string;
+}
+
+export const LocaleSwitcher: FC<ILocaleSwitcher> = ({ className }) => {
   const pathname = usePathname();
   const { navigate } = useLocaleNavigate();
 
@@ -18,7 +24,7 @@ export const LocaleSwitcher = () => {
   return (
     <Select
       size="sm"
-      className="w-[100px] p-0 m-0 language-select"
+      className={`${className} w-[100px] p-0 m-0 language-select`}
       placeholder="Select"
       defaultSelectedKeys={[pathname.split('/')[1]]}
       aria-label="language-select"
