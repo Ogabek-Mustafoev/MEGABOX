@@ -108,15 +108,7 @@ export const popularCategoriesData: IPopularCategory[] = [
     text: 'Windows',
   },
   {
-    icon: 'https://cdn.mediapark.uz/imgs/e309f284-48b3-460b-a5fe-9d50ea99c21f_%D0%9C%D0%BE%D0%BD%D1%82%D0%B0%D0%B6%D0%BD%D0%B0%D1%8F%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C8.webp',
-    text: 'Planshetlar',
-  },
-  {
-    icon: 'https://cdn.mediapark.uz/imgs/061f70c3-d187-45ab-9552-46f26f15ae46.webp',
-    text: 'Windows',
-  },
-  {
-    icon: 'https://cdn.mediapark.uz/imgs/27925aad-3b38-4ca6-898e-48927c51bd20_1_@1300.webp',
-    text: 'iPhone',
+    icon: 'https://cdn.mediapark.uz/imgs/994f2200-0446-408e-8277-b81fc755581f_4__1300.webp',
+    text: 'Macbook',
   },
 ];

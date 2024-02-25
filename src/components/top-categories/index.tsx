@@ -41,9 +41,9 @@ export const TopCategories = ({ data, isFixed }: { isFixed: boolean; data: ITopC
           >
             {t('discounts')}
           </Button>
-          {data?.map(({ url, key }) => (
+          {data?.map(({ url, key }, idx) => (
             <Button
-              key={url}
+              key={idx}
               className="bg-transparent min-w-28 font-semibold text-base"
             >
               {t(key)}

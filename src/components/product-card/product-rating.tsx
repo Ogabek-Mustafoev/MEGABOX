@@ -2,16 +2,17 @@ import free_star from '@/icons/free-star.svg';
 import full_star from '@/icons/full-star.svg';
 import half_star from '@/icons/half-star.svg';
 
-import React from 'react';
+import React, { FC } from 'react';
 
 import { Image } from '@nextui-org/image';
 
 interface IStarRating {
   rating: number;
+  className?: string;
 }
 
-const StarRating = ({ rating }: IStarRating) => {
-  // const roundedRating = Math.trunc(rating * 2) / 2;
+const StarRating: FC<IStarRating> = (props) => {
+  const { rating, className = 'flex items-center' } = props;
   const fullStarCount = parseInt(String(rating));
   const restStar = rating - fullStarCount;
   const starCount = fullStarCount + (restStar >= 0.25 ? 1 : 0);
@@ -65,7 +66,7 @@ const StarRating = ({ rating }: IStarRating) => {
     return stars;
   };
 
-  return <div className="flex items-center">{renderStars()}</div>;
+  return <div className={className}>{renderStars()}</div>;
 };
 
 export default StarRating;
