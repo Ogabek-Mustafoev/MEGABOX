@@ -1,7 +1,9 @@
+'use client';
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isFixed: Boolean(localStorage.getItem('isFixed')),
+  isFixed: false,
 };
 
 export const headerSlice = createSlice({
