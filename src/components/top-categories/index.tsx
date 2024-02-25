@@ -3,15 +3,22 @@
 import { bottom_arrow, category_icon } from '@/mock';
 import { ITopCategories } from '@/types';
 
+import { FC } from 'react';
+
 import { Button, Image } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
-export const TopCategories = ({ data, isFixed }: { isFixed: boolean; data: ITopCategories[] }) => {
+interface ITopCategory {
+  data: ITopCategories[];
+  isFixed: boolean;
+}
+
+export const TopCategories: FC<ITopCategory> = ({ data, isFixed }) => {
   const t = useTranslations('top-categories');
 
   return (
     <div
-      className={`${isFixed ? 'mt-20' : ''} hidden sm:block mb-6 border-t border-b border-border-color`}
+      className={`${isFixed ? 'mt-32 lg:mt-20' : 'mt-0'} hidden sm:block mb-6 border-t border-b border-border-color`}
     >
       <div className="py-3 w-full container flex items-center gap-5">
         <Button

@@ -2,34 +2,37 @@
 
 import { HeaderTop } from '@/components/header/header-top';
 import { TopCategories } from '@/components/top-categories';
+import { setIsFixed } from '@/features';
+import { useAppDispatch, useAppSelector } from '@/hooks';
 import { useLocaleLink } from '@/hooks/locale-link';
 import { category_icon, enter_icon, search_icon } from '@/mock';
 import { headerData } from '@/mock/header.data';
 import { topCategories } from '@/mock/top-categories.data';
 import { TLocale } from '@/types';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { Button, Image, Input } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
-import { LocaleSwitcher, MobileNav } from '../';
+import { LocaleSwitcher } from '../';
 
 interface IHeader {
   lang: TLocale;
 }
 
 export const Header = ({ lang }: IHeader) => {
-  const [isFixed, setIsFixed] = useState<boolean>(false);
+  const { isFixed } = useAppSelector((state) => state.header);
   const t = useTranslations('header');
   const { LocaleLink } = useLocaleLink();
+  const dispatch = useAppDispatch();
 
   const onWindowScroll = () => {
     const scrollHeight = window.scrollY;
     if (scrollHeight > 40) {
-      setIsFixed(true);
+      dispatch(setIsFixed(true));
     } else {
-      setIsFixed(false);
+      dispatch(setIsFixed(false));
     }
   };
 
