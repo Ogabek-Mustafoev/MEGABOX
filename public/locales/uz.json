@@ -49,6 +49,9 @@
     "store_application": "Sizning doʻkoningiz endi doimo yoningizda!",
     "about_application": "Smartfonlar, planshetlar va eng soʻnggi elektronika mahsulotlarini Mediapark ilovasida topishingiz mumkin."
   },
+  "auth":{
+      "verified_success": "Muvaffaqiyatli tasdiqlandi"
+  },
   "popularBrands": "Ommabop brendlar",
   "why": "Nega aynan Mediapark?"
 }

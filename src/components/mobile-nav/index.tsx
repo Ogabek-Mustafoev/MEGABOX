@@ -7,7 +7,7 @@ import { TLocale } from '@/types';
 import { FC } from 'react';
 
 import { Button } from '@nextui-org/button';
-import { Image } from '@nextui-org/react';
+import { Image, useDisclosure } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
 interface IMobileNav {
@@ -17,9 +17,9 @@ interface IMobileNav {
 export const MobileNav: FC<IMobileNav> = ({ lang }) => {
   const { LocaleLink } = useLocaleLink();
   const t = useTranslations('header');
-
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
-    <ul className="fixed top-shadow bottom-0 px-1 sm:px-5 grid py-3 bg-white grid-cols-5 left-0 w-full z-[1002] lg:hidden">
+    <ul className="fixed top-shadow bottom-0 px-1 sm:px-5 grid py-3 bg-white grid-cols-5 left-0 w-full z-[50] lg:hidden">
       {headerData.headerLink.map(({ key, url, icon }, idx) =>
         url ? (
           <li key={url}>

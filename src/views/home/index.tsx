@@ -1,6 +1,7 @@
 'use client';
 
 import { Banner, Slider, PopularCategoryCard } from '@/components';
+import { useAppSelector } from '@/hooks';
 import { popularCategoriesData, bannerData } from '@/mock';
 import { IPageParams } from '@/types';
 
@@ -11,8 +12,10 @@ import { DesktopView, MobileView } from './components';
 interface IHomePage extends IPageParams {}
 
 export const HomePage = ({ lang }: IHomePage) => {
+  const { isFixed } = useAppSelector((state) => state.header);
+
   return (
-    <section className="container">
+    <section className={`${isFixed ? 'mt-32' : 'mt-0'} sm:mt-0 container`}>
       <div className="flex w-full items-stretch gap-5 min-h-36 md:min-h-96 lg:min-h-[420px]">
         <Slider
           showDots
