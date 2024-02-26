@@ -12,10 +12,11 @@ import { TLocale } from '@/types';
 
 import { useEffect } from 'react';
 
-import { Button, Image, Input } from '@nextui-org/react';
+import { Button, Image, Input, useDisclosure } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 
 import { LocaleSwitcher } from '../';
+import { AuthModal } from '../auth';
 
 interface IHeader {
   lang: TLocale;
@@ -25,8 +26,8 @@ export const Header = ({ lang }: IHeader) => {
   const { isFixed } = useAppSelector((state) => state.header);
   const t = useTranslations('header');
   const { LocaleLink } = useLocaleLink();
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
   const dispatch = useAppDispatch();
-
   const onWindowScroll = () => {
     const scrollHeight = window.scrollY;
     if (scrollHeight > 40) {
@@ -48,7 +49,7 @@ export const Header = ({ lang }: IHeader) => {
   return (
     <header>
       <HeaderTop data={headerData.headerTop} />
-      <nav className={isFixed ? 'fixed shadow-lg top-0 left-0 w-full z-[1001] bg-white' : ''}>
+      <nav className={isFixed ? 'fixed shadow-lg top-0 left-0 w-full z-[50] bg-white' : ''}>
         <div
           className={`container flex flex-col lg:flex-row justify-between gap-0 lg:gap-5 py-3 lg:items-center`}
         >
@@ -124,14 +125,19 @@ export const Header = ({ lang }: IHeader) => {
             />
           </div>
           <ul className="hidden lg:flex gap-4 items-center">
-            <li className="flex items-center gap-3 cursor-pointer">
-              <p className="font-semibold text-sm">{t('enter')}</p>
-              <Image
-                src={enter_icon.src}
-                className="rounded-none w-5 h-5"
-                alt="enter"
-              />
-            </li>
+            <Button
+              onPress={onOpen}
+              className="bg-white"
+            >
+              <li className="flex items-center gap-3 cursor-pointer">
+                <p className="font-semibold text-sm">{t('enter')}</p>
+                <Image
+                  src={enter_icon.src}
+                  className="rounded-none w-5 h-5"
+                  alt="enter"
+                />
+              </li>
+            </Button>
             <li className="w-px h-10 bg-[#E8ECEF]" />
             {headerData.headerLink.map(({ key, classes, icon, url }, idx) => (
               <li
@@ -153,6 +159,11 @@ export const Header = ({ lang }: IHeader) => {
       <TopCategories
         isFixed={isFixed}
         data={topCategories}
+      />
+      <AuthModal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        onClose={onClose}
       />
     </header>
   );

@@ -28,7 +28,7 @@ export const headerData: IHeaderData = {
     { key: 'catalog', icon: category_icon, url: 'category', classes: 'lg:hidden' },
     { key: 'favourites', icon: heart_icon, url: 'favourites' },
     { key: 'basket', icon: basket_icon, url: 'basket' },
-    { key: 'profile', icon: user_icon, url: 'profile' },
+    { key: 'profile', icon: user_icon, url: '#' },
   ],
 };
 

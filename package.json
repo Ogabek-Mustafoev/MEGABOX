@@ -25,6 +25,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-multi-carousel": "^2.8.4",
+    "react-number-format": "^5.3.1",
     "react-redux": "^9.1.0",
     "sass": "^1.69.7",
     "server-only": "^0.0.1",
@@ -33,16 +34,23 @@
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.20.1",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "add": "^2.0.6",
     "autoprefixer": "^10.4.17",
     "eslint": "^8",
     "eslint-config-next": "^14.0.4",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
     "postcss": "^8",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "react-google-recaptcha-v3": "^1.10.1",
+    "react-hot-toast": "^2.4.1",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "yarn": "^1.22.21"
   }
 }
