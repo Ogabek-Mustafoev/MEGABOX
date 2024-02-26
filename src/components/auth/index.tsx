@@ -213,7 +213,7 @@ export const AuthModal = (props: IAuthModal) => {
                             color="danger"
                             type="button"
                             variant="light"
-                            onPress={mode === 'login' && onClose}
+                            onPress={mode === 'login' ? onClose : () => {}}
                             onClick={() => {
                               if (mode !== 'login') {
                                 clearInterval(intervalId ? intervalId : '');
