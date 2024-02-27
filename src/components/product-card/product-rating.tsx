@@ -24,7 +24,7 @@ const StarRating: FC<IStarRating> = (props) => {
     for (let i = 0; i < fullStarCount; i++) {
       stars.push(
         <Image
-          className="w-5 h-5"
+          className="w-4 h-4 sm:w-5 sm:h-5"
           key={i}
           src={full_star?.src}
           alt="full star"
@@ -35,7 +35,7 @@ const StarRating: FC<IStarRating> = (props) => {
     if (restStar >= 0.25 && restStar <= 0.5) {
       stars.push(
         <Image
-          className="w-5 h-5"
+          className="w-4 h-4 sm:w-5 sm:h-5"
           key="half"
           src={half_star?.src}
           alt="half star"
@@ -44,7 +44,7 @@ const StarRating: FC<IStarRating> = (props) => {
     } else if (restStar > 0.5) {
       stars.push(
         <Image
-          className="w-5 h-5"
+          className="w-4 h-4 sm:w-5 sm:h-5"
           key="full"
           src={full_star?.src}
           alt="full star"
@@ -55,7 +55,7 @@ const StarRating: FC<IStarRating> = (props) => {
     for (let i = 0; i < freeStarCount; i++) {
       stars.push(
         <Image
-          className="w-5 h-5"
+          className="w-4 h-4 sm:w-5 sm:h-5"
           key={`empty-${i}`}
           src={free_star?.src}
           alt="empty star"

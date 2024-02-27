@@ -12,9 +12,9 @@ interface IBaseLayout {
 
 export const BaseLayout = ({ children, lang }: IBaseLayout) => (
   <Fragment>
+    <Toaster />
     <Header lang={lang} />
     <main>{children}</main>
-    <Toaster />
     <MobileNav lang={lang} />
     <Footer lang={lang} />
   </Fragment>

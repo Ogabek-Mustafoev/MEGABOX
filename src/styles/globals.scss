@@ -139,18 +139,22 @@
       }
     }
   }
-  .phone__mask{
-    .text_validator{
+
+  .phone__mask {
+    .text_validator {
       color: #f11717;
     }
-    .text_invalidator{
+
+    .text_invalidator {
       color: #282828;
     }
-    .error__message{
+
+    .error__message {
       color: #f11717;
       padding-left: 3px;
       font-size: 14px;
     }
+
     input {
       margin-top: 5px;
       width: 100%;
@@ -160,17 +164,32 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 100%;
+
       &::placeholder {
         color: #d6d5d2;
         font-size: 16px;
         font-weight: 400;
         line-height: 100%;
       }
+
       &:focus {
         border: 1px solid orange;
       }
     }
   }
+}
+
+.react-multiple-carousel__arrow {
+  z-index: 20 !important;
+
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 0 !important;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0 !important;
 }
 
 ::-webkit-scrollbar {

@@ -80,7 +80,7 @@ export const Slider: FC<ISlider> = (props) => {
       >
         {sliderData.map((item, idx) => (
           <Component
-            key={idx}
+            key={item?.url || idx}
             {...item}
           />
         ))}

@@ -11,11 +11,15 @@ import delivery from '@/icons/delivery.svg';
 import enter_icon from '@/icons/enter.svg';
 import facebook from '@/icons/facebook.svg';
 import faq from '@/icons/faq.svg';
+import gallery_filled from '@/icons/gallery-filled.svg';
+import gallery_outlined from '@/icons/gallery-outlined.svg';
 import guarantee from '@/icons/guarante.svg';
 import heart_icon from '@/icons/heart.svg';
 import home_icon from '@/icons/home.svg';
 import instagram from '@/icons/instagram.svg';
 import laptop_icon from '@/icons/laptop.svg';
+import list_filled from '@/icons/list-filled.svg';
+import list_outlined from '@/icons/list-outlined.svg';
 import location_icon from '@/icons/location.svg';
 import logo_icon from '@/icons/logo.svg';
 import payme from '@/icons/payme.svg';
@@ -54,6 +58,10 @@ export {
   refrigerator_icon,
   vacuumCleaner_icon,
   washingMachine_icon,
+  gallery_outlined,
+  gallery_filled,
+  list_outlined,
+  list_filled,
   check_file,
   delivery,
   guarantee,

@@ -22,7 +22,7 @@ export const HomePage = ({ lang }: IHomePage) => {
           arrows={false}
           autoPlay={false}
           component={Banner}
-          wrapperClass="w-full lg:w-3/4"
+          wrapperClass="w-full min-h-full lg:w-3/4"
           childClass={'h-full'}
           sliderData={bannerData}
           parentClass="rounded-md h-full overflow-hidden"
